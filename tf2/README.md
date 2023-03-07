@@ -8,6 +8,6 @@ SMB1 Menu Theme | Team Fortress 2 Theme |
 SMB The Lost Levels | Menu Theme: Seduce Me! |
 Mario Kart: Drunken | Pipe Bomb |
 Super Paper Mario | Intruder Alert |
-New Super Mario Bros. | Mmisfortune Teller |
+New Super Mario Bros. | Misfortune Teller |
 Super Mario Bros. 2 | Red Bread |
 Blackout Ring | Dreams of Cruelty |
