@@ -4,9 +4,9 @@ This is for hosting the music, but a JSON for importing to Redirector is provide
 ## Music
 | Original | TF2 Music |
 | -------- | ------- |
-SMB1 Menu Theme | Team Fortress 2 Theme |
-SMB The Lost Levels | Menu Theme: Seduce Me! |
-Mario Kart: Drunken | Pipe Bomb |
+Super Mario Bros. 1 Menu | Team Fortress 2 Theme |
+SMB The Lost Levels Menu | Seduce Me! |
+Mario Kart | Drunken Pipe Bomb |
 Super Paper Mario | Intruder Alert |
 New Super Mario Bros. | Misfortune Teller |
 Super Mario Bros. 2 | Red Bread |
