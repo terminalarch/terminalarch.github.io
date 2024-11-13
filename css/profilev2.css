@@ -250,7 +250,7 @@ div.profile_page.has_profile_background {
 
 .profile_header .profile_summary {
 	line-height: 18px;
-	height: 57px;
+	height: 90px;
 	overflow: hidden;
 	margin-bottom: 8px;
 }
@@ -1954,9 +1954,6 @@ body.migrated_profile_page #BG_bottom.maincontent {
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
 }
 
-
-.profile_customization.customization_edit {
-}
 
 .profile_customization.customization_edit.none_selected {
 
