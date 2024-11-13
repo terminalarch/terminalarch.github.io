@@ -1,1 +1,296 @@
-terminalarch.de
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>terminalarch.de</title>
+
+    <style>
+        html {
+            background-image: url(https://community.akamai.steamstatic.com/public/images/profile/2020/bg_dots.png);
+            font-family: Arial, Helvetica, Verdana, sans-serif;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/src/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <link href="css/motiva_sans.css?v=1.0" rel="stylesheet" type="text/css">
+    <link href="css/buttons.css?v=LNGz0aQrH--g" rel="stylesheet" type="text/css">
+    <link href="css/shared_global.css?v=DOYfTk4evOTc" rel="stylesheet" type="text/css">
+    <link href="css/globalv2.css?v=RLlF4NbPEL4H" rel="stylesheet" type="text/css">
+    <link href="css/modalContent.css?v=.vXD4gU69vdZP" rel="stylesheet" type="text/css">
+    <link href="css/profilev2.css?v=1.2" rel="stylesheet" type="text/css">
+    <link href="css/motiva_sans.css" rel="stylesheet" type="text/css">
+    <link href="css/shared_responsive.css?v=i5VDn54NESoC" rel="stylesheet" type="text/css">
+    <link href="css/header.css?v=z3WBKGTLlnCN" rel="stylesheet" type="text/css">
+    <link href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css" rel="stylesheet">
+
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="terminalarch.de">
+    <meta property="og:image"
+        content="https://avatars.steamstatic.com/1895220bc541023efdf78e8a3ad912a0d5945d1b_full.jpg">
+    <meta property="og:url" content="terminalarch.de">
+    <meta property="og:site_name" content="terminalarch.de">
+    <meta name="theme-color" content="#880808">
+</head>
+
+<body>
+
+
+    <style>
+        .navbar {
+            overflow: visible;
+            background-color: #333;
+            font-family: Arial, sans-serif;
+            z-index: 100000;
+        }
+
+        .navbar a,
+        .dropdown .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            width: 100px;
+            background-color: #333;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown {
+            z-index: 100000;
+        }
+
+        .dropdown-content {
+            z-index: 100001;
+        }
+
+        @keyframes rgb-animation {
+            0% {
+                color: rgb(255, 0, 0);
+            }
+
+            16% {
+                color: rgb(255, 0, 255);
+            }
+
+            32% {
+                color: rgb(0, 0, 255);
+            }
+
+            48% {
+                color: rgb(0, 255, 255);
+            }
+
+            64% {
+                color: rgb(0, 255, 0);
+            }
+
+            80% {
+                color: rgb(255, 255, 0);
+            }
+
+            100% {
+                color: rgb(255, 0, 0);
+            }
+        }
+
+        .rgb-text {
+            animation: rgb-animation 6s linear infinite;
+            font-weight: bold;
+        }
+
+        /* New profile dropdown styles */
+        .right {
+            float: right;
+        }
+
+        .profile-btn {
+            padding: 8px 16px !important;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .username {
+            color: white;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 32px;
+            height: 32px;
+            border-radius: 2px;
+        }
+
+        .right .dropdown {
+            height: 100%;
+        }
+
+        .right .dropdown-content {
+            right: 0;
+            min-width: 160px;
+            background-color: #333;
+            top: 48px;
+        }
+
+
+        .right .dropdown .dropbtn {
+            height: 48px;
+            margin: 0;
+        }
+
+        /* Hover effects for profile dropdown */
+        .right .dropdown:hover .username {
+            color: black;
+        }
+    </style>
+
+
+    <div class="no_header profile_page has_profile_background"
+        style="background-image: url(https://community.akamai.steamstatic.com/public/images/profile/2020/bg_dots.png);">
+        <div class="profile_header_bg">
+            <div class="profile_header_bg_texture">
+                <div class="profile_header">
+                    <div class="profile_header_content">
+
+
+                        <div class="profile_header_centered_persona">
+                            <div class="persona_name" style="font-size: 24px;">
+                                <span class="actual_persona_name">terminalarch</span>
+                            </div>
+
+                        </div>
+
+                        <div class="playerAvatar profile_header_size offline">
+                            <div class="playerAvatarAutoSizeInner">
+                                <img
+                                    src="https://avatars.steamstatic.com/1895220bc541023efdf78e8a3ad912a0d5945d1b_full.jpg">
+                            </div>
+                        </div>
+
+
+                        <div class="profile_header_summary">
+                            <div class="persona_name persona_name_spacer" style="font-size: 24px;">
+                                <span class="actual_persona_name">&nbsp;</span>
+                            </div>
+                            <div class="profile_summary">
+                                Hackers demand '$125,000 in baguettes' as ransom from multi-billion dollar French firm
+                            </div>
+                            <div class="social-links">
+                                <i class="fa-brands fa-steam-symbol fa-2x"
+                                    onclick="window.open('https://steamcommunity.com/id/terminalarch/')"></i>
+                                <i class="fa-brands fa-bluesky" style="font-size: 1.8em"
+                                    onclick="window.open('https://bsky.app/profile/terminalarch.de')"></i>
+                                <i class="fa-brands fa-github fa-2x"
+                                    onclick="window.open('https://github.com/terminalarch')"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile_content has_profile_background">
+            <div class="profile_background_holder_content">
+                <div class="profile_background_overlay_content" id="profile-blog">
+                </div>
+                <div class="profile_background_image_content"
+                    style="background-image: url(https://community.akamai.steamstatic.com/public/images/profile/2020/bg_dots.png);">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script defer>
+    fetch("/blogs.json")
+        .then(response => response.json())
+        .then(blogs => {
+            blogs.forEach(path => {
+                fetch(path)
+                    .then(response => response.text())
+                    .then(markdown => {
+                        const renderer = new marked.Renderer();
+
+                        renderer.heading = function(obj) {
+                            const text = obj.text;
+                            const level = obj.depth;
+
+                            if (level === 1) {
+                                return `<div class="post-title">${text}</div>\n`;
+                            }
+
+
+                            return `<h${level}>${text}</h${level}>\n`; // Default behavior for other headers
+                        };
+
+                        marked.setOptions({
+                            renderer: renderer
+                        });
+
+                        const html = marked.parse(markdown);
+                        const container = document.createElement("div");
+                        container.setAttribute("class", "blog-container");
+                        container.innerHTML = html;
+                        document.getElementById("profile-blog").append(container);
+                    })
+            });
+        })
+</script>
+
+</html>
