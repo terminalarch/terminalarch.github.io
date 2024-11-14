@@ -2687,6 +2687,10 @@ body.flat_page .sectionTabsHR {
 	margin-top: 30px;
 }
 
+.social-links {
+	cursor: default;
+}
+
 .social-links i:hover {
 	cursor: pointer;
 	color: white;
