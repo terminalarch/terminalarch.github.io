@@ -102,7 +102,7 @@
 <script defer>
     async function loadBlogs() {
         try {
-            const response = await fetch("/blogs.json");
+            const response = await fetch("/blogs.json?v=" + Date.now());
             const blogs = await response.json();
             
             for (let i = 0; i < blogs.length; i++) {
