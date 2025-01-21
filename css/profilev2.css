@@ -2704,6 +2704,8 @@ body.flat_page .sectionTabsHR {
 	width: 90%;
 	margin: 20px auto;
 	padding: 20px;
+	padding-bottom: 3px;
+	margin-bottom: 3px;
 }
 
 .post-title {

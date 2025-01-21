@@ -86,6 +86,9 @@
         <div class="profile_content has_profile_background">
             <div class="profile_background_holder_content">
                 <div class="profile_background_overlay_content" id="profile-blog">
+                    <a class="btn_green_white_innerfade btn_border_2px btn_medium" onclick="loadBlogs()" id="blogLoader" style="margin: 10px;transform: translateX(-50%);margin-left: 50%;">
+                        <span>Load More</span>
+                    </a>
                 </div>
                 <div class="profile_background_image_content"
                     style="background-image: url(https://community.akamai.steamstatic.com/public/images/profile/2020/bg_dots.png);">
@@ -99,60 +102,81 @@
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script defer>
+    const BLOGS_TO_LOAD = 5;
+    const LOAD_MORE_BTN = document.getElementById("blogLoader");
+    let blogs = [];
+
+    function generateBlog(markdown) {
+        const renderer = new marked.Renderer();
+
+        renderer.heading = function(obj) {
+            const text = obj.text;
+            const level = obj.depth;
+
+            if (level === 1) {
+                return `<div class="post-title">${text}</div>\n`;
+            }
+
+            return `<h${level}>${text}</h${level}>\n`;
+        };
+
+        renderer.link = function(obj) {
+            const href = obj.href;
+            const title = obj.title;
+            const text = obj.text;
+
+            return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+        };
+
+        marked.setOptions({
+            renderer: renderer
+        });
+
+        const html = marked.parse(markdown);
+        const container = document.createElement("div");
+        container.setAttribute("class", "blog-container");
+        container.innerHTML = html;
+        document.getElementById("profile-blog").append(container);
+    }
+
     async function loadBlogs() {
+        const blog = document.getElementById("profile-blog");
+        for (let i = 0; i < BLOGS_TO_LOAD; i++) {
+            const path = blogs.shift();
+            if(!path) {
+                LOAD_MORE_BTN.style.display = "none";
+                continue;
+            }
+            const blogResponse = await fetch(path);
+
+            generateBlog(await blogResponse.text());
+
+            // Add <hr> between blog posts
+            const hr = document.createElement("hr");
+            hr.classList.add("blog-separator");
+            blog.append(hr);
+            
+            LOAD_MORE_BTN.parentNode.appendChild(LOAD_MORE_BTN);
+        }
+
+        if(blogs.length === 0) {
+            const separator = blog.querySelectorAll("hr");
+            separator[separator.length-1].remove();
+        }
+    }
+
+    async function fetchBlogs() {
         try {
             const response = await fetch("/blogs.json?v=" + Date.now());
-            const blogs = await response.json();
+            blogs = await response.json();
             
-            for (let i = 0; i < blogs.length; i++) {
-                const path = blogs[i];
-                const blogResponse = await fetch(path);
-                const markdown = await blogResponse.text();
-
-                const renderer = new marked.Renderer();
-
-                renderer.heading = function(obj) {
-                    const text = obj.text;
-                    const level = obj.depth;
-
-                    if (level === 1) {
-                        return `<div class="post-title">${text}</div>\n`;
-                    }
-
-                    return `<h${level}>${text}</h${level}>\n`;
-                };
-
-                renderer.link = function(obj) {
-                    const href = obj.href;
-                    const title = obj.title;
-                    const text = obj.text;
-
-                    return `<a href="${href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
-                };
-
-                marked.setOptions({
-                    renderer: renderer
-                });
-
-                const html = marked.parse(markdown);
-                const container = document.createElement("div");
-                container.setAttribute("class", "blog-container");
-                container.innerHTML = html;
-                document.getElementById("profile-blog").append(container);
-
-                // Add <hr> between blog posts
-                if (i < blogs.length - 1) { // Add <hr> only if it's not the last blog
-                    const hr = document.createElement("hr");
-                    hr.classList.add("blog-separator");
-                    document.getElementById("profile-blog").append(hr);
-                }
-            }
+            loadBlogs();
         } catch (error) {
             console.error("Error loading blogs:", error);
         }
     }
 
-    loadBlogs();
+    fetchBlogs();
 
     function adjustScale() {
         const threshold = 950;
