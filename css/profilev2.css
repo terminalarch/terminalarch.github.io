@@ -1949,6 +1949,9 @@ body.migrated_profile_page #BG_bottom.maincontent {
 
 	background-color: #171717;
 
+    overflow-x: hidden;
+    overflow-y: auto;
+
 	opacity: .85;
 	filter: alpha(opacity=85);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
